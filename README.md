@@ -48,6 +48,7 @@ flowchart TB
 subgraph Device
 
     subgraph Shortcut: User Input
+
         subgraph Automations
             Auto1[Check in on network access]
             Auto2[Check out on network exit]
@@ -89,27 +90,12 @@ subgraph Telegram_API
         ta[Bot]
     end
 
-ta -.-> t
+Manual --> ArZeEr.py
+Automations --> ArZeEr.py
 
-Auto1 --> p1
-Auto2 --> p2
+ArZeEr.py --> CSV:_Data_Store
+ArZeEr.py -.-> Telegram_API
 
-m1 --> p1
-m2 --> p2
-m3 --> p3
-m4 --> p4
-m5 --> p5
-
-p1 --> CSV:_Data_Store
-p2 --> CSV:_Data_Store
-p3 --> CSV:_Data_Store
-p4 --> CSV:_Data_Store
-p5 --> CSV:_Data_Store
-
-p1 -.-> Telegram_API
-p2 -.-> Telegram_API
-p3 -.-> Telegram_API
-p4 -.-> Telegram_API
-p5 -.-> Telegram_API
+Telegram_API -.-> Telegram:_User_Output
 
 ```
