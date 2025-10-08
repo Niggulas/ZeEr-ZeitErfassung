@@ -89,7 +89,7 @@ subgraph Telegram_API
         ta[Bot]
     end
 
-ta --> t
+ta -.-> t
 
 Auto1 --> p1
 Auto2 --> p2
@@ -106,10 +106,10 @@ p3 --> CSV:_Data_Store
 p4 --> CSV:_Data_Store
 p5 --> CSV:_Data_Store
 
-p1 --> Telegram_API
-p2 --> Telegram_API
-p3 --> Telegram_API
-p4 --> Telegram_API
-p5 --> Telefram_API
+p1 -.-> Telegram_API
+p2 -.-> Telegram_API
+p3 -.-> Telegram_API
+p4 -.-> Telegram_API
+p5 -.-> Telegram_API
 
 ```
